@@ -1,4 +1,4 @@
 # myCode
-上传代码
-谁身上生产实习三次 
-是
+ flex-add
+这是一个关于flexbox基础的骰子布局
+ [demo](https://lovemysyy.github.io/myCode/saolei/saolei.html)
