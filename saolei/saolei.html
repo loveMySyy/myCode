@@ -2,32 +2,34 @@
 <html>
 	<head>
 		<title>二师兄扫雷</title>
-		<meta charset"utf-8">
+		<meta charset="utf-8">
 		<link rel="stylesheet" href="saolei/style.css">
 	</head>
 	<body>
-		<div id="box">
-			<div id="title">
-				<span class="img"></span><span class="title">扫雷</span>
+		<div id="outer">
+			<div id="level">
+				<label>LEVEL:</label>
+				<select id="gameLevel">
+					<option value=10>10颗雷</option>
+					<option value=20>20颗雷</option>
+					<option value=30>30颗雷</option>
+				</select>
 			</div>
-			<div id="mark">
-				<span id="time">000</span>
-				<input id="startGame" type="button" value="开始游戏"/>
-				<span id="number"></span>
+			<div id="box">
+				<div id="title">
+					<span class="img"></span><span class="title">扫雷</span>
+				</div>
+				<div id="mark">
+					<span id="time">000</span>
+					<input id="startGame" type="button" value="开始游戏"/>
+					<span id="number"></span>
+				</div>
+				<div id="game">
+					<canvas height="200" width="200">
+					</canvas>
+				</div>
 			</div>
-			<div id="game">
-				<canvas height="200" width="200">
-				</canvas>
-			</div>
-		</div>
-		<div id="level">
-			<label>LEVEL:</label>
-			<select id="gameLevel">
-				<option value=10>10颗雷</option>
-				<option value=20>20颗雷</option>
-				<option value=30>30颗雷</option>
-			</select>
-		</div>
+		<div>
 		<script>
 			//定义画布
 			var oCanvas=document.querySelectorAll("canvas")[0];
@@ -46,6 +48,6 @@
 		<script src="saolei/img.js"></script>
 		<script src="saolei/map.js"></script>
 		<script src="saolei/canvas.js"></script>
-		<script src="saolei/app.js"></script>
+		<script src="saolei/app.js" ></script>
 	</body>
 </html>

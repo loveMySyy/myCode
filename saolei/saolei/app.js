@@ -1,7 +1,4 @@
-//取消鼠标右键点击的默认行为
-document.oncontextmenu = function(){
-　　return false;
-}
+
 
 
  //给LEVEL下拉菜单添加事件
@@ -17,17 +14,14 @@ document.oncontextmenu = function(){
 })
 
 
-//页面初始化
-function init(){
-	newGame=new Game();
-}
-
-	
 //游戏对象构造函数	
 function Game(){
 	this.mask();
 }
-
+//页面初始化
+	function start(){
+		newGame=new Game();
+	}
 
 //游戏对象原型
 Game.prototype={
@@ -71,7 +65,9 @@ Game.prototype={
 		this.timer=null;
 		removeEvent(oCanvas,'mousedown',click);
 		context.drawImage(Img.oGameover,0,0,200,200);
-		alert("你输了！请重新开始！:)");
+		setTimeout(function(){
+			alert("你输了！请重新开始！:)");
+		},100)
 	},
 	//游戏胜利
 	win:function(){
@@ -79,7 +75,10 @@ Game.prototype={
 		this.timer=null;
 		removeEvent(oCanvas,'mousedown',click);
 		context.drawImage(Img.oWin,0,0,200,200);
-		alert("你赢了！好棒！要不要再来一次？")
+		setTimeout(function(){
+			alert("你赢了！好棒！要不要再来一次？");
+		},100)
+		
 	},
 }
 
@@ -146,7 +145,7 @@ function openSurround(obj){
 }
 
 
-//画布点击函数
+//画布点击函数（左键打开，右键标记）
 function click(event){
 	var i=Math.floor((event.clientX- oGame.offsetLeft-oBox.offsetLeft)/Map.cell_width);
 	var j=Math.floor((event.clientY- oGame.offsetTop-oBox.offsetTop)/Map.cell_height);
@@ -172,7 +171,7 @@ function click(event){
 					}
 				}
 			}
-			//一颗雷没挖到，并且关闭的格子想<=10，游戏胜利
+			//一颗雷没挖到，并且关闭的格子<=10，游戏胜利
 			oClose<=Map.bombNum&&setTimeout(function(){
 				newGame.win();
 			},200)
@@ -195,6 +194,7 @@ function click(event){
 				}
 			}
 			oMarkNum.innerHTML=format(Map.bombNum-oMarked);
+			stopDefault(event);
 		}
 	}
 }

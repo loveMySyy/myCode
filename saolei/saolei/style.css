@@ -59,6 +59,10 @@ span.title{
 	height:30px;
 	display:block;
 	margin:15px auto;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	-ms-border-radius:10px;
 	border-radius:10px;
 }
 #time{
@@ -95,6 +99,7 @@ span.title{
 	text-align:center;
 	line-height:65px;
 	font-size:30px;
+	vertical-align:middle;
 }
 #level select{
 	height:40px;

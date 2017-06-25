@@ -17,12 +17,11 @@ var Img = new function() {
 	this.oWin=new Image();
     var numImages = 15;
     var numLoaded = 0;
-
     function imageLoaded() {
         numLoaded++;
 		//图片加载完才开始加载页面
         if (numLoaded === numImages) {
-            window.init();
+          start();
         }
     }
 

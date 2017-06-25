@@ -36,3 +36,12 @@ function format(num){
 		return num;
 	}
 }
+//取消事件默认行为
+function stopDefault(e){
+	if(e.preventDefault){
+		e.preventDefault();
+	}
+	else{
+		window.event.returnValue=false;
+	}
+}
