@@ -192,7 +192,7 @@ function click(event){
 				}
 			}
 			oMarkNum.innerHTML=format(Map.bombNum-oMarked);
-			this.oncontextmenu = function(){
+			oCanvas.oncontextmenu = function(){
                 		return false;
             		};
 		}
