@@ -1,4 +1,7 @@
 
+ document.oncontextmenu = function(){
+                return false;
+            };
 
 
  //给LEVEL下拉菜单添加事件
