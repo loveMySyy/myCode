@@ -1,9 +1,4 @@
 
- document.oncontextmenu = function(){
-                return false;
-            };
-
-
  //给LEVEL下拉菜单添加事件
  addEvent(oGameLevel,'change',function(){
 	 Map.bombNum=parseInt(oGameLevel.options[oGameLevel.selectedIndex].value);
@@ -197,7 +192,9 @@ function click(event){
 				}
 			}
 			oMarkNum.innerHTML=format(Map.bombNum-oMarked);
-			stopDefault(event);
+			this.oncontextmenu = function(){
+                		return false;
+            		};
 		}
 	}
 }
