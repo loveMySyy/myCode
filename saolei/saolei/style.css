@@ -92,10 +92,10 @@ span.title{
 	position:absolute;
 	height:65px;
 	width:244px;
-	left:30%;
+	left:20%;
 	top:70%;
 	margin-left:-120px;
-	margin-top:120px;
+	margin-top:-120px;
 	background:orange;
 	text-align:center;
 	line-height:65px;
